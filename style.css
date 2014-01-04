@@ -1,0 +1,875 @@
+/*
+ Theme Name:     CoffeeBear 2014
+ Theme URI:      http://coffeebear.net/code/
+ Description:    Romangie Child Theme
+ Author:		 Mark McKibben
+ Author URI:	 http://coffeebear.net/
+
+ Template:       romangie
+ Version:        0.0.0
+*/
+
+@import url("../romangie/style.css");
+
+/* =Theme customization starts here
+https://secure.flickr.com/photos/manzabar/11317172075/
+https://farm6.staticflickr.com/5475/11317172075_0d92e6063a_o.jpg
+http://colorpeek.com/#rgb(184,112,63),rgb(30,22,18),rgb(110,74,49),rgb(75,50,35),rgb(234,204,125),rgb(82,84,59),rgb(135,151,89),rgb(81,74,68)
+-------------------------------------------------------------- */
+
+
+/**************************************
+RESET
+**************************************/
+html, body, address, blockquote, div, dl, form, h1, h2, h3, h4, h5, h6, ol, p, pre, table, ul,
+dd, dt, li, tbody, td, tfoot, th, thead, tr, button, del, ins, map, object,
+a, abbr, acronym, b, bdo, big, br, cite, code, dfn, em, i, img, kbd, q, samp, small, span,
+strong, sub, sup, tt, var, legend, fieldset {
+	margin: 0;
+	padding: 0;
+}
+
+img, fieldset {
+	border: 0;
+}
+
+/* set html5 elements to block */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { 
+    display: block;
+	padding: 0;
+	margin: 0;
+}
+
+/* set img max-width */
+img {
+	max-width: 100%;
+	height: auto;
+	box-sizing: border-box;
+}
+
+@font-face {
+	font-family: 'ElegantIcons';
+	src:url('fonts/ElegantIcons.eot');
+	src:url('fonts/ElegantIcons.eot?#iefix') format('embedded-opentype'),
+		url('fonts/ElegantIcons.woff') format('woff'),
+		url('fonts/ElegantIcons.ttf') format('truetype'),
+		url('fonts/ElegantIcons.svg#ElegantIcons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Genericons';
+	src:url('fonts/genericons-regular-webfont.eot');
+	src:url('fonts/genericons-regular-webfont.eot?#iefix') format('embedded-opentype'),
+		url('fonts/genericons-regular-webfont.woff') format('woff'),
+		url('fonts/genericons-regular-webfont.ttf') format('truetype'),
+		url('fonts/genericons-regular-webfont.svg#Genericons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+	font-family: 'ElegantIcons';
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[gen-icon]:before {
+	font-family: 'Genericons';
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+
+/**************************************
+STYLING
+**************************************/
+
+nav {
+	display: block;
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	color: rgb(135,151,89);
+	text-decoration: none;
+}
+
+a:hover, a:active {
+	border-bottom: 1px solid rgb(184,112,63);
+	color: rgb(184,112,63);
+	text-decoration: none;
+}
+
+
+.container {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 5px #888;
+}
+
+.header {
+	padding-bottom: 10px;
+}
+
+.site-branding {
+    text-align: center;
+    margin: 40px 40px 45px;
+    font-weight: normal;
+}
+
+.site-branding h1, .site-branding h2 {
+    font-weight: normal;
+}
+
+#site-title a {
+    color: rgb(135,151,89);
+    font-size: 30px;
+    padding: 5px 30px;
+    border-bottom: 1px solid #ddd;
+}
+
+#site-description {
+    color: #888;
+    font-size: 14px;
+    margin-top: 17px;
+}
+
+.navi-wrap {
+	font-size: 15px;
+	text-align: center;
+	border-top: 3px double #ddd;
+}
+
+/** Menu */
+.navi-wrap ul {
+	list-style: none;
+	padding: 0;
+}
+
+.navi-wrap li {
+	display: inline-block;
+	position: relative;
+}
+
+.navi-wrap ul li {
+	border-bottom: 1px solid #ddd;
+}
+
+.navi-wrap li a {
+	color: rgb(135,151,89);
+	display: block;
+	line-height: 2.8em;
+	padding: 0 1em;
+	text-decoration: none;
+}
+
+.navi-wrap ul ul {
+	background: #fff;
+	border: solid 1px #ddd;
+	border-bottom-color: #bbb;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+	display: none;
+	float: left;
+	position: absolute;
+	top: 2.8em;
+	left: 0;
+	text-align: left;
+	z-index: 9999;
+}
+
+.navi-wrap ul ul ul {
+	left: 100%;
+	top: -1px;
+}
+
+.navi-wrap ul ul a {
+	background: #fff;
+	color: rgb(135,151,89);
+	line-height: 1.5em;
+	padding: .5em .5em .5em 1em;
+	width: 12em;
+	height: auto;
+	text-transform: none;
+}
+
+.navi-wrap li:hover > a,
+.navi-wrap ul ul :hover > a,
+.navi-wrap .current-menu-item > a,
+.navi-wrap .current-menu-ancestor > a,
+.navi-wrap .current_page_item > a,
+.navi-wrap .current_page_ancestor > a {
+	color: #000;
+}
+.navi-wrap ul ul a:hover {
+	background: #f3f3f3;
+}
+.navi-wrap ul li:hover > ul {
+	display: block;
+}
+
+.menu-item {
+	margin: 0 -2px;
+}
+
+.navi-wrap:first-child {
+    margin: 0 100px;
+}
+
+/** General Styling of Elements */
+
+.indexpage .post-roll {
+	margin-bottom: 80px;
+}
+
+.page-title {
+	text-align: center;
+	font-size: 25px;
+	font-weight: 300;
+}
+
+#title_archives {
+	margin: 20px 0 40px 20px;
+}
+/** Styling of Meta Element */
+
+.info {
+	margin-top: 3px;
+}
+
+.footer .info {
+	margin-top: 10px;
+}
+
+.meta {
+	text-align: right;
+}
+
+.metaicon {
+	font-size: 40px;
+	margin-top: -8px;
+	color: #444;
+}
+
+.info-icon {
+	display: inline;
+	margin-right: 6px;
+	color: rgb(135,151,89);
+	font-size: 13px;
+}
+
+.metaline {
+	margin: 5px 0 15px;
+}
+
+.info p, .info li, .info a, .info div, .comment-author {
+	font-size: 14px !important;
+	text-decoration: none !important;
+	line-height: 23px !important;
+}
+
+.meta-item {
+	margin-top: 10px;
+}
+
+.commentlist .meta-item {
+	margin: 10px 0 0 !important;
+}
+
+.info li {
+	list-style: none !important;
+}
+
+/* Content Styling */
+
+.content, .page {
+	word-wrap: break-word;
+}
+
+.content h2 a:hover {
+	border-bottom: 1px solid;
+	text-decoration: none;
+}
+
+.content p, .content li, .content pre, .comment-content p, .comment-content li, .comment-content pre {
+	font-size: 15px;
+	line-height: 1.5em;
+	color: #444;
+}
+
+.comment .alert {
+	padding: 5px 15px;
+}
+
+.entry p, .comment-content p, .entry blockquote, .comment-content blockquote {
+    margin: 0 0 22px;
+}
+
+.entry embed, .entry iframe, .mejs-container {
+	max-width: 100%;
+}
+
+img.wp-post-image {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.entry img {
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+.sticky {
+
+}
+
+.gallery-caption {
+
+}
+
+.size-auto, 
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+    max-width: 100%;
+    height: auto;
+}
+
+.mejs-container {
+    width: 400px !important;
+    margin-bottom: 22px;
+}
+
+.comments-area .children {
+	margin: 0;
+	border-left: 2px solid rgb(135,151,89);
+}
+
+.comments-area .children .comment {
+	padding-left: 20px;
+}
+
+.comments-area .children .depth-2 {
+	background: #fcfcfc;
+}
+
+.comments-area .children .depth-3 {
+	background: #f9f9f9;
+}
+
+.comments-area .children .depth-4 {
+	background: #f6f6f6;
+}
+
+.comments-area .children .depth-5 {
+	background: #f4f4f4;
+}
+
+.comments-area .children .depth-6 {
+	background: #f2f2f2;
+}
+
+.comments-area .children .depth-7 {
+	background: #f0f0f0;
+}
+
+.comments-area .children .depth-8 {
+	background: #ededed;
+}
+
+.comments-area .children .depth-9 {
+	background: #ebebeb;
+}
+
+.comments-area .children .depth-10 {
+	background: #e9e9e9;
+}
+.comments-area .children .depth-11 {
+	background: #e7e7e7;
+}
+
+.bypostauthor {
+	background: #fbfbfb;
+}
+
+#respond {
+    margin-top: 70px;
+}
+
+.comment .info p {
+	margin: 0;
+}
+
+.commentlist li, .comment {
+	list-style: none;
+}
+
+.new-comment, .pingback {
+	padding-top: 15px;
+	padding-bottom: 25px;
+	border-bottom: 1px dotted #eee;
+    margin-right: 20px;
+	margin-left: 0;
+}
+
+.comment-content {
+	margin-top: 20px;
+}
+
+.entry-title, .entry-title a{
+	font-weight: normal;
+	font-size: 26px;
+}
+
+.entry {
+	margin-top: 26px;
+}
+
+.entry h2, .comment-content h2, .entry h1, .comment-content h1 {
+	margin: 40px 0 10px;
+}
+
+.entry h2, .comment-content h2 {
+	font-weight: normal;
+}
+
+.entry h3, .entry h4, .entry h5, .entry h6, .comment-content h3, .comment-content h4, .comment-content h5, .comment-content h6 {
+	font-weight: normal;
+	font-style: italic;
+	color: #777;
+	margin: 20px 0 10px;
+}
+
+.entry h4, .entry h5, .entry h6, .comment-content h4.comment-content h5, .comment-content h6{
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+.entry ul, .comment-content ul {
+	list-style: square;
+}
+
+.entry ul, .entry ol, .comment-content ul, .comment-content ol {
+	margin: 0 0 1.7em 3em;
+}
+
+.entry ul ul, .entry ol ol, .entry ul ol, .entry ol ul, .comment-content ul ul, .comment-content ol ol, .comment-content ul ol, .comment-content ol ul {
+	margin-bottom: 0;
+}
+
+.entry table, .comment-content table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+
+.entry td , .entry th, .comment-content td, .comment-content th {
+	padding: 5px;
+}
+
+.entry td, .comment-content td {
+    border-bottom: 1px solid #ddd;
+}
+
+.entry table, .comment-content table {
+    border-top: 1px solid #ddd;
+}
+
+.entry pre, .comment-content pre {
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	margin: 2em 0;
+	padding: 1em 2em;
+}
+
+.entry blockquote, .comment-content blockquote {
+	margin: 2em 1em;
+	padding: 0.6em 2em;
+	position: relative;
+	line-height: 1.5em;
+	border-style: none;
+}
+
+.entry blockquote p, .comment-content blockquote p {
+	font-size: 16px;
+}
+
+.entry blockquote:before, .comment-content blockquote:before {
+	content: '{';
+	color: rgb(135,151,89);
+	font-size: 500%;
+	position: absolute;
+	font-family: Georgia, serif;
+	top: 40%;
+	left: -0.3em;
+}
+
+.entry blockquote p, .comment-content blockquote p {
+	line-height: 1.7em;
+}
+
+.entry .alignnone {
+    max-width: 100%;
+    height: auto;
+}
+
+.entry img.alignleft, .entry .wp-caption.alignleft {
+    margin: 5px 20px 5px -10px;
+}
+
+.entry img.alignright, .entry .wp-caption.alignright {
+    margin: 5px -10px 5px 20px;
+}
+
+.entry .wp-caption-text {
+    font-size: 15px;
+    font-style: italic;
+    margin: 5px 0 22px;
+}
+
+.gallery .wp-caption-text {
+	margin-bottom: 0;
+}
+
+.gallery .gallery-item {
+	margin-bottom: 20px;
+}
+
+.alignleft {
+    float: left;
+}
+
+.alignright {
+    float: right;
+}
+
+.aligncenter {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.entry ins, .comment-content ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+.entry dd, .comment-content dd {
+	margin: 0 1.165em 1.165em;
+}
+
+.format-chat p {
+	margin: 0 0 10px;
+	padding: 4px 2px;
+}
+.format-chat p:nth-child(even) {
+	background: #fbfbfb;
+}
+
+.comments-title {
+	margin-top: 70px;
+    margin-bottom: 30px !important;
+	text-align: center;
+	font-size: 22px !important;
+}
+
+.nocomments {
+	text-align: center;
+}
+
+#reply-title {
+	display: none;
+}
+
+code {
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+/** Sidebar Styling */
+.sidebar h4 ,.sidebar label, .sidebar caption, .comments-title {
+	color: #444;
+	font-size: 18px;
+	margin-bottom: 10px;
+	font-weight: normal;
+	text-transform: uppercase;
+}
+
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+}
+
+.widget {
+	margin-top: 1em;
+	margin-bottom: 2em;
+}
+
+.primary-sidebar .widget {
+	margin-top: 0;
+}
+
+.children li a {
+	padding-left: 3px;
+}
+
+.children li ul li a {
+	padding-left: 20px;
+}
+
+.sidebar li {
+	border-top: 1px solid #aaa;
+	padding:4px 0 4px 5px;
+}
+
+.sidebar li a {
+	line-height: 2em;
+	display: inline-block;
+}
+
+.sidebar input[type="text"] {
+	width: 100%;
+}
+
+ .comments input, .wp-caption {
+ 	max-width: 100%;
+ }
+
+.search-form .search-submit {
+    display: none;
+}
+
+.search-field {
+    width: 100%;
+}
+
+/** Footer */
+
+.footer {
+	background: #333;
+	margin-top: 50px;
+	border-top: 1px solid #ddd;
+    color: #bebebe;
+    font-size: 15px;
+    text-shadow: 1px 1px #111;
+}
+
+.footer .info h2, .footer .info h3, .footer .info h4, .footer .info h5, .footer .info h6, .footer .info p , .footer .info caption {
+	color: #fff;
+    font-weight: bold;
+    margin-bottom: 30px;
+} 
+
+.footer #wp-calendar tbody td a {
+	color: #FF3D3D;
+}
+
+.siteinfo {
+	background: #0e0e0e;
+	padding: 20px 0;
+	border-top: 1px solid #000;
+	text-align: center;
+    text-shadow: 1px 1px #111;
+}
+
+.footer a, .siteinfo a {
+    color: rgb(135,151,89);
+}
+
+.siteinfo p, .footer td, .footer th {
+	font-size: 13px;
+	color: #aaa;
+}
+
+/** Widgets */
+#wp-calendar {
+	margin: 0 auto;
+	padding: 0.5em;
+	width: 95%;
+	color: #666;
+	font-size: 0.8em;
+}
+
+#wp-calendar thead th {
+	font-weight: bold;
+	padding: 0 2px 10px;
+}
+
+#wp-calendar tbody td {
+	padding: 4px 2px;
+}
+
+#wp-calendar tbody td a {
+	font-weight: bold;
+	color: rgb(135,151,89);
+}
+
+.textwidget p {
+	margin-top: 20px;
+}
+
+/** Comment Styling */
+
+.form-control {
+	width: 400px;
+}
+
+.required {
+	color: rgb(135,151,89);
+}
+
+.comment-notes {
+	font-size: 13px !important;
+	color: #666 !important;
+	margin: 20px 0 30px !important;
+}
+
+.comment-form p {
+	margin-bottom: 10px;
+}
+
+.comment-form {
+	margin-bottom: 50px;
+}
+
+input[type="submit"] {
+	background: rgb(110,74,49);
+	border: 2px solid rgb(75,50,35);
+	color: rgb(234,204,125);
+	text-decoration: none;
+	outline: 5px auto -webkit-focus-ring-color;
+	outline-offset: -2px;
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 1.428571429;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	background-image: none;
+	border-radius: 4px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+}
+
+input[type="submit"]:hover {
+	background: rgb(184,112,63);
+	color: rgb(255,255,255);
+}
+
+input[type="password"], input[type="text"], input[type="search"] {
+	font-size: 17px;
+	line-height: 1.428571429;
+	color: #333;
+	vertical-align: middle;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	margin-right: 20px;
+	padding: 4px 12px;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+	-webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+/** Pagination Styling */
+
+.page-links a , .more-link, .comments .navigation a {
+	border: 1px solid #bbb;
+	border-radius: 6px;
+	font-size: 14px;
+	background: #f9f9f9;
+	padding: 10px 20px;
+	display: inline-block;
+}
+
+.page-links-title {
+	font-weight: bold;
+}
+
+.more-link {
+	padding: 3px 15px;
+	margin-top: 10px;
+}
+
+.more-link .glyphicon {
+	margin-left: 8px;
+}
+
+.excerpt-link {
+	margin-top: 2px;
+	margin-left: 10px;
+}
+
+.page-links a, .comments .navigation a {
+	padding: 4px 8px;
+	height: 28px;
+	text-align: center;
+	border-radius: 4px;
+	margin: 20px 2px 0;
+}
+
+.comments .navigation a {
+	margin: 20px;
+}
+
+.page-links-title {
+	margin-right: 15px;
+}
+
+.page-links > span {
+	padding-right: 8px;
+}
+
+.pagenav .prev-posts {
+	text-align: right;
+}
+
+#error_message {
+	 text-align: center;
+}
+
+
+/**************************************
+Now-Reading STYLING
+**************************************/
+.nr-edit:before {
+	content: '\f411';
+	display: inline-block;
+	-webkit-font-smoothing: antialiased;
+	font: normal 16px/1 'Genericons';
+	vertical-align: top;
+}
+
+.nr-manage:before {
+	content: '\f425';
+	display: inline-block;
+	-webkit-font-smoothing: antialiased;
+	font: normal 16px/1 'Genericons';
+	vertical-align: top;
+}
