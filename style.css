@@ -14,7 +14,7 @@
 /* =Theme customization starts here
 https://secure.flickr.com/photos/manzabar/11317172075/
 https://farm6.staticflickr.com/5475/11317172075_0d92e6063a_o.jpg
-http://colorpeek.com/#rgb(184,112,63),rgb(30,22,18),rgb(110,74,49),rgb(75,50,35),rgb(234,204,125),rgb(82,84,59),rgb(135,151,89),rgb(81,74,68)
+http://colorpeek.com/##B8703F,rgb(30,22,18),#52543B,#514A44,#879759,rgb(82,84,59),#879759,rgb(81,74,68)
 -------------------------------------------------------------- */
 
 
@@ -107,13 +107,13 @@ nav {
 }
 
 a {
-	color: rgb(135,151,89);
+	color: #879759;
 	text-decoration: none;
 }
 
 a:hover, a:active {
-	border-bottom: 1px solid rgb(184,112,63);
-	color: rgb(184,112,63);
+	border-bottom: 1px solid #B8703F;
+	color: #B8703F;
 	text-decoration: none;
 }
 
@@ -142,7 +142,7 @@ a:hover, a:active {
 }
 
 #site-title a {
-    color: rgb(135,151,89);
+    color: #879759;
     font-size: 30px;
     padding: 5px 30px;
     border-bottom: 1px solid #ddd;
@@ -176,7 +176,7 @@ a:hover, a:active {
 }
 
 .navi-wrap li a {
-	color: rgb(135,151,89);
+	color: #879759;
 	display: block;
 	line-height: 2.8em;
 	padding: 0 1em;
@@ -204,7 +204,7 @@ a:hover, a:active {
 
 .navi-wrap ul ul a {
 	background: #fff;
-	color: rgb(135,151,89);
+	color: #879759;
 	line-height: 1.5em;
 	padding: .5em .5em .5em 1em;
 	width: 12em;
@@ -273,7 +273,7 @@ a:hover, a:active {
 .info-icon {
 	display: inline;
 	margin-right: 6px;
-	color: rgb(135,151,89);
+	color: #879759;
 	font-size: 13px;
 }
 
@@ -362,7 +362,7 @@ img.wp-post-image {
 
 .comments-area .children {
 	margin: 0;
-	border-left: 2px solid rgb(135,151,89);
+	border-left: 2px solid #879759;
 }
 
 .comments-area .children .comment {
@@ -514,7 +514,7 @@ img.wp-post-image {
 
 .entry blockquote:before, .comment-content blockquote:before {
 	content: '{';
-	color: rgb(135,151,89);
+	color: #879759;
 	font-size: 500%;
 	position: absolute;
 	font-family: Georgia, serif;
@@ -691,7 +691,7 @@ code {
 }
 
 .footer a, .siteinfo a {
-    color: rgb(135,151,89);
+    color: #879759;
 }
 
 .siteinfo p, .footer td, .footer th {
@@ -719,7 +719,7 @@ code {
 
 #wp-calendar tbody td a {
 	font-weight: bold;
-	color: rgb(135,151,89);
+	color: #879759;
 }
 
 .textwidget p {
@@ -733,7 +733,7 @@ code {
 }
 
 .required {
-	color: rgb(135,151,89);
+	color: #879759;
 }
 
 .comment-notes {
@@ -751,9 +751,9 @@ code {
 }
 
 input[type="submit"] {
-	background: rgb(110,74,49);
-	border: 2px solid rgb(75,50,35);
-	color: rgb(234,204,125);
+	background: #879759;
+	border: 2px solid #514A44;
+	color: #eee;
 	text-decoration: none;
 	outline: 5px auto -webkit-focus-ring-color;
 	outline-offset: -2px;
@@ -776,8 +776,8 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-	background: rgb(184,112,63);
-	color: rgb(255,255,255);
+	background: #52543B;
+	color: #eee;
 }
 
 input[type="password"], input[type="text"], input[type="search"] {
