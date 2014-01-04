@@ -80,20 +80,6 @@ img {
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-}
-
-/* Use the following CSS code if you want to use data attributes for inserting your icons */
-[gen-icon]:before {
-	font-family: 'Genericons';
-	content: attr(data-icon);
-	speak: none;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
 
 
 /**************************************
@@ -751,7 +737,7 @@ code {
 }
 
 input[type="submit"] {
-	background: #879759;
+	background: #52543B;
 	border: 2px solid #514A44;
 	color: #eee;
 	text-decoration: none;
@@ -776,7 +762,8 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-	background: #52543B;
+	background: #879759;
+	border: 2px solid #879759;
 	color: #eee;
 }
 

@@ -22,4 +22,15 @@ function wp_dynamic_copyright() {
 	return $output;
 }
 
+	// // Register scripts
+	// function cb2014_scripts() {
+	// 	wp_enqueue_style( 
+	// 		'cb2014-genericons', 
+	// 		get_stylesheet_directory_uri() . '/css/genericons.css'
+	// 		, array()
+	// 		, '3.0.2'
+	// 	);
+	// }
+	// add_action( 'wp_enqueue_scripts', 'cb2014_scripts' );
+
 ?>
