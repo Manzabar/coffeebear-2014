@@ -40,17 +40,17 @@ if( have_books(intval($nr_id)) ) : while ( have_books(intval(nr_id)) ) : the_boo
 <?php if ( is_active_sidebar( 'primary' ) ) {
     $romangie_left_col_class = "col-md-9 indexpage";
     $romangie_right_col_class= "col-md-3 visible-lg visible-md";
-    $romangie_content_class = "col-sm-9 content format-" . get_post_format();
+    $romangie_content_class = "col-sm-9 content format-standard"
 } else {
     $romangie_left_col_class = "col-md-12 indexpage";
     $romangie_right_col_class= "hidden-xs";
-    $romangie_content_class = "col-sm-9 col-md-8 content format-" . get_post_format();
+    $romangie_content_class = "col-sm-9 col-md-8 content format-standard"
 }
 ?>
 <div class="row">
         <div class="<?php echo $romangie_left_col_class; ?>">
 
-            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+            <?php if( have_books(intval($nr_id)) ) : while ( have_books(intval(nr_id)) ) : the_book(); ?>
                 <?php $romangie_countComments = wp_count_comments(get_the_ID()); ?>
                     <div id="post-<?php the_ID(); ?>" <?php post_class('row post-roll'); ?>>
                         <div class="col-sm-3 meta info hidden-xs">
@@ -61,17 +61,24 @@ if( have_books(intval($nr_id)) ) : while ( have_books(intval(nr_id)) ) : the_boo
                             <hr class="metaline" />
                             <div class="additional-meta">
                                 <div class="meta-item"><a href="<?php book_author_permalink() ?>"><span data-icon="&#xe08a;" class="info-icon"></span><?php book_author() ?></a></div>
-                                <div class="meta-item"><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php printf( __('Permalink to %s', 'romangie'), get_the_title()); ?>"><span data-icon="&#xe023;" class="info-icon"></span><?php echo get_the_date(); ?></a></div>
-                                <div class="meta-item"><a href="<?php the_permalink(); ?>#comments" rel="bookmark" title="<?php _e('Go to comment section', 'romangie'); ?>"><span data-icon="&#xe065;" class="info-icon"></span><?php printf( _n( '%1$s Comment', '%1$s Comments', get_comments_number(), 'romangie' ), number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' ); ?></a></div>
-                                <?php if ( has_category() ) { ?><div class="meta-item"><?php _e('Categories:', 'romangie' ); ?><?php the_category(); ?></div><?php } ?>
-                                <?php if ( has_tag() ) { ?><div class="meta-item"><?php _e('Tags:', 'romangie' ); the_tags('<ul><li>','</li><li>','</li></ul>'); ?></div><?php } ?>
-                                <?php edit_post_link(__( 'Edit this entry.', 'romangie') , '<div class="meta-item">', '</div>'); ?>
+                                <div class="meta-item"><span data-icon="&#xe023;" class="info-icon"></span>Started: <?php book_started() ?></div>
+                                <?php if ( book_finished(false) != 'Not yet finished.') { $book_finished_date = strtotime(book_finished(false)) ?><div class="meta-item"><span data-icon="&#xe023;" class="info-icon"></span>Finished: <?php book_finished() ?></div><?php } ?>
+                                <?php if( book_has_post() ) { ?><div class="meta-item"><a href="<?php book_post_url() ?>"><span data-icon="&#xe065;" class="info-icon"></span><?php book_post_title() ?></a></div><?php } ?>
+                                <?php if ( !empty(cb2014_print_book_tags()) ) { ?><div class="meta-item">Tags:<ul><?php cb2014_print_book_tags(1) ?></ul></div><?php } ?>
+                                <?php if( can_now_reading_admin() ) : ?>
+                                    <div class="meta-item"><a href="<?php book_edit_url() ?>">Edit this book</a></div>
+                                    <div class="meta-item"><a href="<?php manage_library_url() ?>">Manage Books</a></div>
+                              <?php endif; ?>
                             </div>
                         </div>
                         <div class="<?php echo $romangie_content_class; ?>">
-                            <h2 class="entry-title"><?php the_title(); ?></h2>
-                            <div class="entry"><?php if ( has_post_thumbnail() ) { the_post_thumbnail( 'full' ); } the_content('Continue Reading <span class="glyphicon glyphicon-chevron-right"></span>'); ?></div>
-                                <?php wp_link_pages( array( 'before' => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'romangie' ) . '</span>', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>' ) ); ?>
+                            <h2 class="entry-title"><?php book_title(); ?></h2>
+                            <div class="entry"><p><a class="url" href="<?php book_url() ?>" title="Buy <?php book_title() ?> from Amazon.com"><img class="photo book-cover alignright" src="<?php book_image() ?>" alt="<?php book_title() ?>" /></a></p></div>
+                                <?php 
+                                    global $book;
+                                    $review = $book->review;
+                                    if (!empty($review)) { book_review(); }
+                                ?>
                         </div>
                         <div class="comments">
                             <?php comments_template( '', true ); ?>

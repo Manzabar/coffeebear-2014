@@ -1,68 +1,26 @@
-<div class="now-reading">    
-	
-	<h3>Planned books:</h3>
-	
-	<?php if( have_books('status=unread') ) : ?>
-		
-		<ul>
-		
-		<?php while( have_books('status=unread') ) : the_book(); ?>
-			
-			<li><a href="<?php book_permalink() ?>"><?php book_title() ?></a> by <?php book_author() ?></li>
-			
-		<?php endwhile; ?>
-		
-		</ul>
-		
-	<?php else : ?>
-		
-		<p>None</p>
-		
-	<?php endif; ?>
-	
-	<h3>Current books:</h3>
-	
+<div class="now-reading">
 	<?php if( have_books('status=reading') ) : ?>
-		
-		<ul>
-		
-		<?php while( have_books('status=reading') ) : the_book(); ?>
-			
-			<li>
-				<p><a href="<?php book_permalink() ?>"><img src="<?php book_image() ?>" alt="<?php book_title() ?>" /></a></p>
-				<p><strong><?php book_title() ?></strong> by <?php book_author() ?></p>
-			</li>
-			
+		<?php while( have_books('status=reading&num=1&orderby=random') ) : the_book(); ?>
+		<div class="book">
+			<span class="bookimage"><a href="<?php book_permalink() ?>"><img src="<?php book_image() ?>" alt="<?php book_title() ?>" /></a></span>
+			<span class="bookmeta"><a href="<?php book_permalink() ?>"><?php book_title() ?></a> by <?php book_author() ?></span>
+		</div>
 		<?php endwhile; ?>
-		
-		</ul>
-		
-	<?php else : ?>
-		
-		<p>None</p>
-		
 	<?php endif; ?>
-	
-	<h3>Recent books:</h3>
-	
-	<?php if( have_books('status=read&orderby=finished&order=desc') ) : ?>
-		
-		<ul>
-		
-		<?php while( have_books('status=read&orderby=finished&order=desc') ) : the_book(); ?>
-			
-			<li><a href="<?php book_permalink() ?>"><?php book_title() ?></a> by <?php book_author() ?></li>
-			
+	<h3>Recent Books</h3>
+	<?php if( have_books('status=read&orderby=finished&order=desc&num=4') ) : ?>
+		<ul class="little-list">
+		<?php while( have_books('status=read&orderby=finished&order=desc&num=3') ) : the_book(); ?>
+			<li><a href="<?php book_permalink() ?>"><img src="<?php book_image() ?>" alt="<?php book_title() ?>" width="65" height="105"/></a></li>
 		<?php endwhile; ?>
-		
 		</ul>
-		
-	<?php else : ?>
-		
-		<p>None</p>
-		
 	<?php endif; ?>
-	
-	<p><a href="<?php library_url() ?>">View full Library</a></p>
-	
+	<h3>Future Reads</h3>
+	<?php if( have_books('status=unread&num=4&orderby=random') ) : ?>
+		<ul class="little-list">
+		<?php while( have_books('status=unread') ) : the_book(); ?>
+			<li><a href="<?php book_permalink() ?>"><img src="<?php book_image() ?>" alt="<?php book_title() ?>" width="65" height="105"/></a></li>
+		<?php endwhile; ?>
+		</ul>
+	<?php endif; ?>
 </div>

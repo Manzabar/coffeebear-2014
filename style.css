@@ -835,3 +835,12 @@ input[type="password"], input[type="text"], input[type="search"] {
 /**************************************
 Now-Reading STYLING
 **************************************/
+
+.entry-author, .entry-author a{
+	font-weight: normal;
+	font-size: 20px;
+}
+
+.nw-rating {
+	color: rgb(184, 112, 63);
+}

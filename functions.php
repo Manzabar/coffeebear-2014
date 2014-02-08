@@ -1,5 +1,6 @@
 <?php
-
+// Returns a dynamic copyright notice with the years of the first and last
+// post.
 function wp_dynamic_copyright() {
 	global $wpdb;
 	$copyright_dates = $wpdb->get_results("
@@ -22,15 +23,27 @@ function wp_dynamic_copyright() {
 	return $output;
 }
 
-	// // Register scripts
-	// function cb2014_scripts() {
-	// 	wp_enqueue_style( 
-	// 		'cb2014-genericons', 
-	// 		get_stylesheet_directory_uri() . '/css/genericons.css'
-	// 		, array()
-	// 		, '3.0.2'
-	// 	);
-	// }
-	// add_action( 'wp_enqueue_scripts', 'cb2014_scripts' );
+// Custom function for use with the Now-Reading (Now-Reading Reloaded) to 
+// print a list of tags associates with a specific book
+function cb2014_print_book_tags( $echo = true ) {
+    global $book;
 
+    $tags = get_book_tags($book->id);
+
+    if ( count($tags) < 1 )
+        return;
+
+    $i = 0;
+    $string = '';
+    foreach ( (array) $tags as $tag ) {
+        if ( $i++ != 0 )
+            $string .= ', ';
+        $link = book_tag_url($tag, 0);
+        $string .= "<li><a href='$link' rel='tag'>$tag</a></li>";
+    }
+
+    if ( $echo )
+        echo $string;
+    return $string;
+}
 ?>

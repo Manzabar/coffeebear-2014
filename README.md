@@ -13,4 +13,4 @@ CHANGELOG
 
 TODO
 ================================
-* Add templates to support [Now-Reading Reloaded](http://wordpress.org/plugins/now-reading-reloaded/developers/)
+* Add templates to support [Now-Reading Reloaded](http://wordpress.org/plugins/now-reading-reloaded/)
