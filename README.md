@@ -8,9 +8,11 @@ This is a WordPress child theme based off of [Romangie](http://themes.tobscore.c
 
 CHANGELOG
 ================================
+* Updated dynamic copyright notice to include the blog's name as link to the blog.
+* Add templates to support [Now-Reading Reloaded](http://wordpress.org/plugins/now-reading-reloaded/)
 * Changed the footer to output a [dynamic copyright notice](http://www.wpbeginner.com/wp-tutorials/how-to-add-a-dynamic-copyright-date-in-wordpress-footer/)
 * Added support for displaying selected Creative Commons license to blog footer when using the [Creative Commons Configurator](http://wordpress.org/plugins/creative-commons-configurator-1/) plugin.
 
 TODO
 ================================
-* Add templates to support [Now-Reading Reloaded](http://wordpress.org/plugins/now-reading-reloaded/)
+* Update all templates for Now-Reading Reloaded to fit this theme.

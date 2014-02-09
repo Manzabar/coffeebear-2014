@@ -16,8 +16,9 @@ function wp_dynamic_copyright() {
 	if($copyright_dates) {
 		$copyright = "&copy; " . $copyright_dates[0]->firstdate;
 	if($copyright_dates[0]->firstdate != $copyright_dates[0]->lastdate) {
-		$copyright .= '-' . $copyright_dates[0]->lastdate;
+		$copyright .= ' &ndash; ' . $copyright_dates[0]->lastdate;
 	}
+    $copyright .= ' <a href="' . get_bloginfo('url') .'" title="' . get_bloginfo('description') .' | ' . get_bloginfo('name') .'">' . get_bloginfo('name') .'</a>';
 	$output = $copyright;
 	}
 	return $output;
