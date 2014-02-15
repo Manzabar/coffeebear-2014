@@ -7,7 +7,7 @@
 		</div>
 		<?php endwhile; ?>
 	<?php endif; ?>
-	<h3>Recent Books</h3>
+	<h5>Recent Books</h5>
 	<?php if( have_books('status=read&orderby=finished&order=desc&num=4') ) : ?>
 		<ul class="little-list">
 		<?php while( have_books('status=read&orderby=finished&order=desc&num=3') ) : the_book(); ?>
@@ -15,7 +15,7 @@
 		<?php endwhile; ?>
 		</ul>
 	<?php endif; ?>
-	<h3>Future Reads</h3>
+	<h5>Future Reads</h5>
 	<?php if( have_books('status=unread&num=4&orderby=random') ) : ?>
 		<ul class="little-list">
 		<?php while( have_books('status=unread') ) : the_book(); ?>

@@ -835,7 +835,6 @@ input[type="password"], input[type="text"], input[type="search"] {
 /**************************************
 Now-Reading STYLING
 **************************************/
-
 .entry-author, .entry-author a{
 	font-weight: normal;
 	font-size: 20px;
@@ -843,4 +842,22 @@ Now-Reading STYLING
 
 .nw-rating {
 	color: rgb(184, 112, 63);
+}
+
+ul.little-list li{display:inline; list-style:none;}
+
+ul.current-books {
+	list-style: none;
+	list-style-image: none;
+}
+
+ul.current-books li {
+	display: inline;
+	padding: 5px;
+}
+
+ul.current-books li a img {
+	-moz-box-shadow: 7.5px 7.5px 3.75px #888;
+	-webkit-box-shadow: 7.5px 7.5px 3.75px #888;
+	box-shadow: 7.5px 7.5px 3.75px #888;
 }

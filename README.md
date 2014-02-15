@@ -8,6 +8,7 @@ This is a WordPress child theme based off of [Romangie](http://themes.tobscore.c
 
 CHANGELOG
 ================================
+* Tweaked Now Reading Reloaded templates for: Single Book page, Library page and Sidebar.
 * Updated dynamic copyright notice to include the blog's name as link to the blog.
 * Add templates to support [Now-Reading Reloaded](http://wordpress.org/plugins/now-reading-reloaded/)
 * Changed the footer to output a [dynamic copyright notice](http://www.wpbeginner.com/wp-tutorials/how-to-add-a-dynamic-copyright-date-in-wordpress-footer/)
