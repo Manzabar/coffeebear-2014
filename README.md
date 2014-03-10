@@ -8,7 +8,8 @@ This is a WordPress child theme based off of [Romangie](http://themes.tobscore.c
 
 CHANGELOG
 ================================
-* Added Now Reading Reloaded templates for: Tag page and Search Results page.
+* Tweaked Now Reading Reloaded templates for: Single Book page and Library page.
+* Added Now Reading Reloaded templates for: Tag page and Author Results page.
 * Tweaked Now Reading Reloaded templates for: Single Book page, Library page and Sidebar.
 * Updated dynamic copyright notice to include the blog's name as link to the blog.
 * Add templates to support [Now-Reading Reloaded](http://wordpress.org/plugins/now-reading-reloaded/)
