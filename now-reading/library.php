@@ -3,7 +3,6 @@
     <head>
         <meta charset="<?php bloginfo( 'charset' ); ?>" />
         <title>Library |  <?php bloginfo('name'); ?></title>
-        <title><?php wp_title( '|', true, 'right' ); ?></title>
         <meta name="viewport" content="width=device-width">
         <meta name="description" content="<?php bloginfo( 'description' ); ?>">
         <link rel="profile" href="http://gmpg.org/xfn/11" />
@@ -21,6 +20,19 @@
                         <h2 id="site-description"><?php bloginfo('description'); ?></h2>
                     </div>
                 </header>
+
+                <div class="navi-wrap">
+                        <?php $romangie_defaults = array(
+                            'theme_location' => 'header-menu',
+                            'container' => 'ol',
+                            'menu_class' => 'flexnav'
+                            );
+                        
+                        wp_nav_menu($romangie_defaults); ?>
+                </div> <!-- /navi-wrap -->
+                <br class="clear" />
+            </div> <!-- /header -->
+		<div class="row">
 			<div id="post-<?php the_ID(); ?>" <?php post_class('row post-roll'); ?>>
 			<div class="col-md-2 meta info hidden-xs">
 				<span data-icon="&#xe086;" class="metaicon"></span>
@@ -28,6 +40,7 @@
                 <div class="additional-meta">
                     <div class="meta-item">Total: <?php total_books() ?></div>
                     <div class="meta-item">Last Month: <?php books_read_since('1 month') ?></div>
+                    <div class="meta-item"><?php if( can_now_reading_admin() ) : ?><a href="<?php manage_library_url() ?>">Manage Books</a><?php endif; ?></div>
                  </div>
 			</div>
 			<div class="post col-md-8" id="post-<?php the_ID(); ?> nr-library">
@@ -74,9 +87,6 @@
 
 			</div>
 		</div>
-		
-		<div class="comments">
-			<?php comments_template( '', true ); ?>
 		</div>
 
 <?php get_footer(); ?>

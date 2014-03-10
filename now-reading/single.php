@@ -9,8 +9,7 @@ if( have_books(intval($nr_id)) ) : while ( have_books(intval(nr_id)) ) : the_boo
 <html <?php language_attributes(); ?>>
     <head>
         <meta charset="<?php bloginfo( 'charset' ); ?>" />
-        <title><?php book_title() ?> | <?php book_author() ?> | Library |  <?php bloginfo('name'); ?></title>
-        <title><?php wp_title( '|', true, 'right' ); ?></title>
+        <title><?php book_title() ?> | <?php book_author() ?> | Library | <?php bloginfo('name'); ?></title>
         <meta name="viewport" content="width=device-width">
         <meta name="description" content="<?php bloginfo( 'description' ); ?>">
         <link rel="profile" href="http://gmpg.org/xfn/11" />
@@ -64,7 +63,7 @@ if( have_books(intval($nr_id)) ) : while ( have_books(intval(nr_id)) ) : the_boo
                                 <div class="meta-item"><span data-icon="&#xe023;" class="info-icon"></span>Started: <?php book_started() ?></div>
                                 <?php if ( book_finished(false) != 'Not yet finished.') { $book_finished_date = strtotime(book_finished(false)) ?><div class="meta-item"><span data-icon="&#xe023;" class="info-icon"></span>Finished: <?php book_finished() ?></div><?php } ?>
                                 <?php if( book_has_post() ) { ?><div class="meta-item"><a href="<?php book_post_url() ?>"><span data-icon="&#xe065;" class="info-icon"></span><?php book_post_title() ?></a></div><?php } ?>
-                                <?php if ( !empty(cb2014_print_book_tags(false)) ) { ?><div class="meta-item"><span data-icon="&#xe018;" class="info-icon"></span><ul><?php print_book_tags(1) ?></ul></div><?php } ?>
+                                <div class="meta-item"><span data-icon="&#xe018;" class="info-icon"></span><ul><?php print_book_tags(1) ?></ul></div>
                                 <?php if( can_now_reading_admin() ) { ?>
                                     <div class="meta-item"><a href="<?php book_edit_url() ?>">Edit this book</a></div>
                                     <div class="meta-item"><a href="<?php manage_library_url() ?>">Manage Books</a></div>
